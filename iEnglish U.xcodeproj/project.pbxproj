@@ -17,6 +17,7 @@
 		1A1E38CC2111E91D00F2257B /* iEnglish_UUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E38CB2111E91D00F2257B /* iEnglish_UUITests.swift */; };
 		1A53EB7221146CD700ECBD0C /* Concentration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A53EB7121146CD700ECBD0C /* Concentration.swift */; };
 		1A53EB7421146FA800ECBD0C /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A53EB7321146FA800ECBD0C /* Card.swift */; };
+		1AB2DAEF21188C5100CCED52 /* Extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AB2DAEE21188C5100CCED52 /* Extentions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		1A1E38CD2111E91D00F2257B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1A53EB7121146CD700ECBD0C /* Concentration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concentration.swift; sourceTree = "<group>"; };
 		1A53EB7321146FA800ECBD0C /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		1AB2DAEE21188C5100CCED52 /* Extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extentions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,10 +105,10 @@
 		1A1E38A72111E91C00F2257B /* iEnglish U */ = {
 			isa = PBXGroup;
 			children = (
-				1A1E38AA2111E91C00F2257B /* ViewController.swift */,
-				1A53EB7121146CD700ECBD0C /* Concentration.swift */,
-				1A53EB7321146FA800ECBD0C /* Card.swift */,
+				1AB2DAEB211877EA00CCED52 /* ViewControllers */,
+				1AB2DAEC2118780D00CCED52 /* Models */,
 				1A1E38AC2111E91D00F2257B /* Main.storyboard */,
+				1AB2DAED21188C1F00CCED52 /* Extentions */,
 				1A1E38D92111E99500F2257B /* Supporting Files */,
 				1A1E38B72111E91D00F2257B /* Info.plist */,
 				1A1E38AF2111E91D00F2257B /* iEnglish_U.xcdatamodeld */,
@@ -140,6 +142,31 @@
 				1A1E38B42111E91D00F2257B /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1AB2DAEB211877EA00CCED52 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1A1E38AA2111E91C00F2257B /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1AB2DAEC2118780D00CCED52 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1A53EB7121146CD700ECBD0C /* Concentration.swift */,
+				1A53EB7321146FA800ECBD0C /* Card.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1AB2DAED21188C1F00CCED52 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				1AB2DAEE21188C5100CCED52 /* Extentions.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,6 +305,7 @@
 			files = (
 				1A1E38AB2111E91C00F2257B /* ViewController.swift in Sources */,
 				1A53EB7221146CD700ECBD0C /* Concentration.swift in Sources */,
+				1AB2DAEF21188C5100CCED52 /* Extentions.swift in Sources */,
 				1A53EB7421146FA800ECBD0C /* Card.swift in Sources */,
 				1A1E38B12111E91D00F2257B /* iEnglish_U.xcdatamodeld in Sources */,
 				1A1E38A92111E91C00F2257B /* AppDelegate.swift in Sources */,
