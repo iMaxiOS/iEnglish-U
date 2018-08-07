@@ -10,23 +10,23 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    lazy var game = Concentration(numberOfParsOfCards: numberOfPairsOfCards)
+    private lazy var game = Concentration(numberOfParsOfCards: numberOfPairsOfCards)
     
     var numberOfPairsOfCards: Int {
-            return (cardButtons.count + 1) / 2
-        }
+        return (cardButtons.count + 1) / 2
+    }
     
-    var flipcount = 0 {
+    private(set) var flipcount = 0 {
         didSet {
             flipsCountLabel.text = "Flips: \(flipcount)"
         }
     }
     
-    @IBOutlet weak var flipsCountLabel: UILabel!
+    @IBOutlet private weak var flipsCountLabel: UILabel!
     
-    @IBOutlet var cardButtons: [UIButton]!
+    @IBOutlet private var cardButtons: [UIButton]!
     
-    @IBAction func touchCard(_ sender: UIButton) {
+    @IBAction private func touchCard(_ sender: UIButton) {
         flipcount += 1
         if let cardNumber = cardButtons.index(of: sender) {
             game.chooseCard(at: cardNumber)
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func updateViewFromModel() {
+    private func updateViewFromModel() {
         for index in cardButtons.indices {
             let button = cardButtons[index]
             let card = game.cards[index]
@@ -56,14 +56,13 @@ class ViewController: UIViewController {
         }
     }
     
-    var phraseChoices = ["You're welcome \n Пожалуйста", "Not at all \n Совсем нет", "Don't mention it \n Не за что", "That's all right \n Все в порядке", "Never mind \n Ничего", "It's my pleasure \n Не стоит"]
-    var phrase = [Int: String]()
+    private var phraseChoices = ["You're welcome \n Пожалуйста", "Not at all \n Совсем нет", "Don't mention it \n Не за что", "That's all right \n Все в порядке", "Never mind \n Ничего", "It's my pleasure \n Не стоит"]
+    private var phrase = [Int: String]()
     
-    func phrase(for card: Card) -> NSAttributedString {
+    private func phrase(for card: Card) -> NSAttributedString {
         
         if phrase[card.identifier] == nil, phraseChoices.count > 0 {
-            let randomIndex = Int(arc4random_uniform(UInt32(phraseChoices.count)))
-            phrase[card.identifier] = phraseChoices.remove(at: randomIndex)
+            phrase[card.identifier] = phraseChoices.remove(at: phraseChoices.count.arc4random)
         }
         
         let outputString = phrase[card.identifier] ?? "?"
@@ -73,7 +72,7 @@ class ViewController: UIViewController {
     }
     
     // Make custom button with two lines
-    func buttonCustomTwoLinesOfText(from phrase: NSString) -> NSAttributedString {
+    private func buttonCustomTwoLinesOfText(from phrase: NSString) -> NSAttributedString {
         
         let newlineRange: NSRange = phrase.range(of: "\n")
         
@@ -109,4 +108,6 @@ class ViewController: UIViewController {
         return attrString
     }
 }
+
+
 
